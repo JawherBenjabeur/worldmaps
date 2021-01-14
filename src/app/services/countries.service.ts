@@ -8,10 +8,11 @@ import { CountryM } from '../models/country/country';
   providedIn: 'root'
 })
 export class CountriesService {
+  apuUrl='https://restcountries.eu/rest/v2/all'
   countries: CountryM[];
   constructor(private http: HttpClient) {}
   getHttpCountries():Observable<any[]> {
-    //console.log(this.http.get<any[]>('https://restcountries.eu/rest/v2/all'));
+   
     return this.http.get<any[]>('https://restcountries.eu/rest/v2/all');
   }
 
@@ -23,16 +24,16 @@ export class CountriesService {
         countries.forEach(country => {
           countr.push(new CountryM(country['name'],country['nativeName'],country['capital'],
           country['region'],country['population'],country['area'],country['flag'],[]))
-          // console.log(country);
+          console.log(country);
         });
-        //console.log(countries);
-        //console.log(this.countries);
+        console.log(countries);
+        console.log(this.countries);
       },
       (error)=>{
         alert('erreur');
       }
     );
-      // console.log(this.countries);
+      
       return countr;
   }
 

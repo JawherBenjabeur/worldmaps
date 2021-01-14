@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { HttpService } from 'src/app/http.service';
 import { CountryM } from 'src/app/models/country/country';
+import { RegionLisComponent } from 'src/app/region-lis/region-lis.component';
 import { CountriesService } from 'src/app/services/countries.service';
 
 @Component({
@@ -8,13 +11,18 @@ import { CountriesService } from 'src/app/services/countries.service';
   styleUrls: ['./regions.component.css']
 })
 export class RegionsComponent implements OnInit {
-  countries: CountryM[];
-  constructor(private countriesService: CountriesService) { }
+  
+  constructor(
+    private httpService: HttpService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-    this.countries = this.countriesService.getCountries();
-    console.log(this.countries);
+    
   }
-
+  goRegions(region){
+    this.router.navigate(['countries',region])
+    
+  }
 
 }
