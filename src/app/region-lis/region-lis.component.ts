@@ -18,7 +18,7 @@ pays;
   ngOnInit(): void {
     this.route.params.subscribe(event => {​​​​​
       this.region=event.region;
-      
+
      }​​​​​)
      this.pays=this.httpService.getCountries(this.region);
     console.log(this.pays);

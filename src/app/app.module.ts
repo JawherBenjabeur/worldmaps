@@ -13,7 +13,7 @@ import { CountryM } from './models/country/country';
 import { PaysComponent } from './components/pays/pays.component';
 import { CountriesService } from './services/countries.service';
 import { RegionLisComponent } from './region-lis/region-lis.component';
-
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -22,20 +22,21 @@ import { RegionLisComponent } from './region-lis/region-lis.component';
   declarations: [
     AppComponent,
     NavbarComponent,
-  
+
     RegionsComponent,
     HomeComponent,
     DetailsComponent,
     PaysComponent,
     RegionLisComponent,
-    
 
-  
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
 
   ],
   providers: [CountriesService],

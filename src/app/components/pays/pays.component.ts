@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from 'src/app/http.service';
 
 
 
@@ -9,13 +10,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pays.component.css']
 })
 export class PaysComponent implements OnInit {
-  
-  constructor() { }
+  countries;
 
-  
+  constructor(private httpService: HttpService,) { }
 
   ngOnInit(): void {
-    
+    this.countries = this.httpService.getAllCountries();
+
+
   }
-  
+
 }
