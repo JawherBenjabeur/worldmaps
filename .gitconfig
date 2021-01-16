@@ -1,0 +1,15 @@
+[user]
+    name = Benjabeur, Jawher
+    email = jawher.benjabeur3@myu.universitecentrale.tn
+[http]
+    sslVerify = false
+
+[https]
+    sslverify = false
+
+[push]
+    default = simple
+[credential]
+    helper = cache --timeout=360000000
+[core]
+    autocrlf = false
